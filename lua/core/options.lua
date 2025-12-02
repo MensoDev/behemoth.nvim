@@ -1,3 +1,16 @@
+-- Behemoth Core.Options
+--
+--  ::::::::  ::::::::: ::::::::::: ::::::::::: ::::::::  ::::    :::  ::::::::  
+-- :+:    :+: :+:    :+:    :+:         :+:    :+:    :+: :+:+:   :+: :+:    :+: 
+-- +:+    +:+ +:+    +:+    +:+         +:+    +:+    +:+ :+:+:+  +:+ +:+        
+-- +#+    +:+ +#++:++#+     +#+         +#+    +#+    +:+ +#+ +:+ +#+ +#++:++#++ 
+-- +#+    +#+ +#+           +#+         +#+    +#+    +#+ +#+  +#+#+#        +#+ 
+-- #+#    #+# #+#           #+#         #+#    #+#    #+# #+#   #+#+# #+#    #+# 
+--  ########  ###           ###     ########### ########  ###    ####  ########
+--
+-- =============================================================================
+--
+
 -- File Explorer
 
 vim.cmd("let g:netrw_banner = 0")
@@ -6,6 +19,7 @@ vim.cmd("let g:netrw_banner = 0")
 
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -43,3 +57,9 @@ vim.opt.hlsearch = true
 
 vim.opt.mouse = 'a'
 vim.g.editorconfig = true
+
+-- disable some default providers
+vim.g.loaded_node_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
