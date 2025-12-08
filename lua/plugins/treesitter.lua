@@ -6,7 +6,24 @@ return {
     config = function()
         require'nvim-treesitter.configs'.setup {
             ensure_installed = { 
+                "bash",
+                "c",
+                "c_sharp",
+                "cpp",
+                "css",
+                "csv",
+                "dart",
+                "hyprlang",
+                "javascript",
+                "json",
                 "lua",
+                "razor",
+                "regex",
+                "sql",
+                "typescript",
+                "vim",
+                "vimdoc",
+                "xml"
             },
 
             sync_install = false,
