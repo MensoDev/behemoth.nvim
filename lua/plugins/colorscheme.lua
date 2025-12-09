@@ -5,7 +5,7 @@ return {
         priority = 1000,
         opts = { },
         config = function()
-            -- vim.cmd("colorscheme tokyonight-night")
+            vim.cmd("colorscheme tokyonight-night")
         end
     },
     {
@@ -13,7 +13,7 @@ return {
         name = "catppuccin",
         priority = 1000,
         config = function()
-            vim.cmd("colorscheme catppuccin")
+            -- vim.cmd("colorscheme catppuccin-mocha")
         end
     },
 }

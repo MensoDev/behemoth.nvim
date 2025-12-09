@@ -15,10 +15,20 @@ return {
         },
         keys = {    
             -- Top Pickers & Explorer
-            { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
-            { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
-            { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
-            { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
+            { "<leader>e", function() Snacks.explorer() end, desc = "file explorer" },
+
+            { "<leader><space>", function() Snacks.picker.buffers() end, desc = "find buffers" },
+            { "<leader>fg", function() Snacks.picker.grep() end, desc = "find files with grep" },
+            { "<leader>fs", function() Snacks.picker.smart() end, desc = "find files - smart" },
+
+            -- Github
+            { "<leader>gi", function() Snacks.picker.gh_issue() end, desc = "GitHub Issues (open)" },
+            { "<leader>gI", function() Snacks.picker.gh_issue({ state = "all" }) end, desc = "GitHub Issues (all)" },
+            { "<leader>gp", function() Snacks.picker.gh_pr() end, desc = "GitHub Pull Requests (open)" },
+            { "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end, desc = "GitHub Pull Requests (all)" },
+
+            -- Theme Pickers
+            { "<leader>th", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
         }
     },
 }
