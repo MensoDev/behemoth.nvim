@@ -7,6 +7,26 @@
 -- The configuration is found in the lsp folder inside the nvim config folder,
 -- so in ~.config/lsp/lua_ls.lua for lua_ls, for example.
 vim.lsp.enable('lua_ls')
+vim.lsp.enable('html')
+vim.lsp.enable('cssls')
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('roslyn')
+
+vim.lsp.config("roslyn", {
+    on_attach = function()
+        print("This will run when the server attaches!")
+    end,
+    settings = {
+        ["csharp|inlay_hints"] = {
+            csharp_enable_inlay_hints_for_implicit_object_creation = true,
+            csharp_enable_inlay_hints_for_implicit_variable_types = true,
+        },
+        ["csharp|code_lens"] = {
+            dotnet_enable_references_code_lens = true,
+        },
+    },
+})
+
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)

@@ -8,6 +8,14 @@
       "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
+    "mason-lspconfig.nvim": {
+      "rev": "c55bd8a8fb191e24176c206a7af1dd51ce7276a5",
+      "src": "https://github.com/mason-org/mason-lspconfig.nvim"
+    },
+    "mason.nvim": {
+      "rev": "57e5a8addb8c71fb063ee4acda466c7cf6ad2800",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
     "nvim": {
       "rev": "193e123cdbc4dd3e86db883d55349e9587f0ded6",
       "src": "https://github.com/catppuccin/nvim"
@@ -24,6 +32,10 @@
     "nvim-web-devicons": {
       "rev": "8dcb311b0c92d460fac00eac706abd43d94d68af",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "roslyn.nvim": {
+      "rev": "1ebc9393d3e577d9f68102f14d98b2e4e7f15644",
+      "src": "https://github.com/seblyng/roslyn.nvim"
     },
     "snacks.nvim": {
       "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",

@@ -6,3 +6,6 @@ require("plugins.code.treesitter")
 require("plugins.code.todo-comments")
 require("plugins.code.lspconfig")
 
+require("plugins.code.mason")
+require("plugins.code.roslyn")
+
