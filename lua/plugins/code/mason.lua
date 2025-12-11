@@ -28,6 +28,9 @@ require("mason-lspconfig").setup({
         "rust_analyzer",
         "cssls",
         "html",
+        "tailwindcss",
+        "emmet_ls",
+        "emmet_language_server",
         -- "roslyn" ISSUE: mason and mason-lspconfig don't suport directly roslyn install
     },
 })

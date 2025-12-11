@@ -43,6 +43,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Diagnostics
 vim.diagnostic.config({
+
+    -- Highlight the line number for warnings
+    -- Highlight entire line for errors
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN] = ' ',
+            [vim.diagnostic.severity.HINT] = ' ',
+            [vim.diagnostic.severity.INFO] = ' ',
+        },
+        -- linehl = {
+        --     [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        -- },
+        -- numhl = {
+        --     [vim.diagnostic.severity.WARN] = 'WarningMsg',
+        -- },
+    },
+
     -- Use the default configuration
     -- virtual_lines = true
 
