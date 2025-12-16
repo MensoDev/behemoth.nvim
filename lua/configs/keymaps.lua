@@ -22,6 +22,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>P', '"+P', { desc = 'Paste from system cli
 
 vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "General clear highlights" })
 vim.keymap.set("n", "<leader>/", "gcc", { desc = "Toggle comment", remap = true })
+vim.keymap.set("v", "<leader>/", "gc", { desc = "Toggle comment", remap = true })
 vim.keymap.set('i', "jk", "<Esc>", { desc = "Exit insert mode to normal mode" })
 
 -- Indent left or right selection

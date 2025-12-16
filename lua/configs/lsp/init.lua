@@ -6,6 +6,8 @@
 -- This actually just enables the lsp servers.
 -- The configuration is found in the lsp folder inside the nvim config folder,
 -- so in ~.config/lsp/lua_ls.lua for lua_ls, for example.
+--
+
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('html')
 vim.lsp.enable('cssls')
@@ -14,7 +16,7 @@ vim.lsp.enable('roslyn')
 
 vim.lsp.config("roslyn", {
     on_attach = function()
-        print("This will run when the server attaches!")
+        print("Roslyn: attach on file")
     end,
     settings = {
         ["csharp|inlay_hints"] = {
@@ -31,12 +33,21 @@ vim.lsp.config("roslyn", {
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
         if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
-            vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup' }
-            vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-            vim.keymap.set('i', '<C-Space>', function()
-                vim.lsp.completion.get()
-            end)
+
+            -- vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup', }
+            -- vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+
+            -- INFO: GOTO
+            vim.keymap.set('n', "<leader>gd", function() vim.lsp.buf.definition() end, { desc = "Go to definition" })
+
+            -- INFO: ACTION
+            vim.keymap.set('n', "<leader>gca", function() vim.lsp.buf.code_action() end, { desc = "Code action" })
+
+            -- INFO: UTILS
+            vim.keymap.set('i', '<C-Space>', function() vim.lsp.completion.get() end)
+
         end
     end,
 })
