@@ -41,17 +41,6 @@ local keys = {
     { "<leader>fs", function() Snacks.picker.smart() end, desc = "find files - smart" },
     { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "find config files" },
 
-    -- LSP
-    { "gd", function() Snacks.picker.lsp_definitions() end, desc = "goto definition" },
-    { "gD", function() Snacks.picker.lsp_declarations() end, desc = "goto declaration" },
-    { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "show references" },
-    { "gI", function() Snacks.picker.lsp_implementations() end, desc = "goto implementation" },
-    { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "goto t[y]pe definition" },
-    { "gai", function() Snacks.picker.lsp_incoming_calls() end, desc = "c[a]lls incoming" },
-    { "gao", function() Snacks.picker.lsp_outgoing_calls() end, desc = "c[a]lls outgoing" },
-    { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP symbols" },
-    { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP workspace symbols" },
-
     -- Github
     { "<leader>gi", function() Snacks.picker.gh_issue() end, desc = "gitHub issues (open)" },
     { "<leader>gI", function() Snacks.picker.gh_issue({ state = "all" }) end, desc = "gitHub issues (all)" },

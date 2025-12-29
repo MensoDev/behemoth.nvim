@@ -43,7 +43,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.keymap.set('n', "<leader>gd", function() vim.lsp.buf.definition() end, { desc = "Go to definition" })
 
             -- INFO: ACTION
-            vim.keymap.set('n', "<leader>gca", function() vim.lsp.buf.code_action() end, { desc = "Code action" })
+
+            vim.keymap.set('n', "<leader>vca", function() vim.lsp.buf.code_action() end, { desc = "View: Code action" })
+            vim.keymap.set('n', "<leader>vrr", function() vim.lsp.buf.references() end, { desc = "View: References" })
+            vim.keymap.set('n', "<leader>vrn", function() vim.lsp.buf.rename() end, { desc = "Rename symbol" })
+            vim.keymap.set('n', "<leader>vcl", function() vim.lsp.codelens.refresh() end, { desc = "View: Refresh codelens" })
 
             -- INFO: UTILS
             vim.keymap.set('i', '<C-Space>', function() vim.lsp.completion.get() end)
