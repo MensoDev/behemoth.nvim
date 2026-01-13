@@ -6,6 +6,12 @@
 vim.keymap.set('n', "<leader>e", "<cmd>Ex<CR>", { desc = "Open file explorer (temp)" })
 vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "General clear highlights" })
 vim.keymap.set('i', "jk", "<Esc>", { desc = "Exit insert mode to normal mode" })
+vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Sair do terminal" })
+--
+
+-- LSP
+--
+vim.keymap.set('n', "<leader>vca", function() vim.lsp.buf.code_action() end, { desc = "View: Code action" })
 --
 
 -- Easier interaction with the system clipboard
@@ -27,6 +33,11 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Switch window left" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
+
+vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]])
+vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]])
+vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]])
+vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]])
 --
 
 -- Easier interaction with split windows
@@ -50,4 +61,18 @@ vim.keymap.set('n', "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete current b
 vim.keymap.set('n', '<leader>xx', '<Cmd>source %<CR>', { desc = 'Source current file' })
 vim.keymap.set('n', '<leader>x', '<Cmd>:.lua<CR>', { desc = 'Lua: execute current line' })
 vim.keymap.set('v', '<leader>x', '<Cmd>:lua<CR>', { desc = 'Lua: execute current selection' })
+--
+
+-- Commands
+--
+vim.cmd("let g:netrw_banner = 0")
+
+-- Highlight when yanking
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('behemoth-highlight-yank', { clear = true }),
+  callback = function()
+    vim.hl.on_yank()
+  end,
+})
 --
