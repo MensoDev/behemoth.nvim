@@ -20,7 +20,7 @@ vim.opt.signcolumn = 'yes'
 
 -- Cursorline
 --
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 --
 
 -- Show whitespace characters
