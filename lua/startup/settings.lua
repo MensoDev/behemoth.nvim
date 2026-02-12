@@ -20,7 +20,7 @@ vim.opt.signcolumn = 'yes'
 
 -- Cursorline
 --
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 --
 
 -- Show whitespace characters
@@ -87,3 +87,4 @@ vim.opt.scrolloff = 8
 --
 vim.opt.swapfile = false
 --
+

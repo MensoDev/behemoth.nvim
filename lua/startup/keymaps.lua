@@ -6,7 +6,6 @@
 vim.keymap.set('n', "<leader>e", "<cmd>Ex<CR>", { desc = "Open file explorer (temp)" })
 vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "General clear highlights" })
 vim.keymap.set('i', "jk", "<Esc>", { desc = "Exit insert mode to normal mode" })
-vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Sair do terminal" })
 --
 
 -- LSP

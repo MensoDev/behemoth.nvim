@@ -8,12 +8,24 @@ return {
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
             bigfile = { enabled = false },
-            dashboard = { enabled = false },
+            dashboard = { enabled = true },
             explorer = { enabled = false },
             indent = { enabled = true },
             dim = { enabled = false },
             input = { enabled = true },
-            picker = { enabled = true },
+            picker = {
+                enabled = true,
+                exclude = {
+                    "node_modules",
+                    "bin",
+                    "obj",
+                    "Coverage",
+                    ".git",
+                    "dist",
+                    "build",
+                    ".next",
+                },
+            },
             notifier = { enabled = true },
             quickfile = { enabled = false },
             scope = { enabled = false },
@@ -30,11 +42,7 @@ return {
             { "<leader>fb", function() require("snacks").picker.buffers() end, desc = "Find Buffers" },
             { "<leader>fc", function() require("snacks").picker.cliphist() end, desc = "Find System clipboard" },
             { "<leader>fk", function() require("snacks").picker.keymaps() end, desc = "Goto Implementation" },
-            --
-
-            -- Terminal
-            --
-            { "<leader>ot", function () require("snacks").terminal() end, desc = "Open terminal" },
+            { "<leader>e", function() require("snacks").explorer() end, desc = "Open File Explorer" },
             --
 
             -- LSP

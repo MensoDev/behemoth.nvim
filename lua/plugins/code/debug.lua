@@ -58,6 +58,12 @@ return {
             vim.keymap.set("n", "<leader>dO", "<Cmd>lua require'dap'.step_out()<CR>", { noremap = true, silent = true, desc = "Debug: step out" })
             vim.keymap.set("n", "<leader>dr", "<Cmd>lua require'dap'.repl.open()<CR>", { noremap = true, silent = true, desc = "Debug: repl open" })
             vim.keymap.set("n", "<leader>dl", "<Cmd>lua require'dap'.run_last()<CR>", { noremap = true, silent = true, desc = "Debug: run last" })
+
+            local sign = vim.fn.sign_define
+
+            sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = ""})
+            sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = ""})
+            sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = ""})
         end
     }
 }

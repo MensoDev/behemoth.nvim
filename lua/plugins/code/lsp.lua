@@ -46,6 +46,7 @@ return {
             vim.lsp.enable('cssls')
             vim.lsp.enable('rust_analyzer')
             vim.lsp.enable('roslyn')
+            vim.lsp.enable('tailwindcss')
 
             vim.lsp.config("roslyn", {
                 on_attach = function()
