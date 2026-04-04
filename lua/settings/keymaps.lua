@@ -9,7 +9,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "General clear highlights"
 
 -- LSP
 --
-vim.keymap.set('n', "<leader>vc", function() vim.lsp.buf.code_action() end, { desc = "Code action" })
+vim.keymap.set('n', "<leader>vc", function() vim.lsp.buf.code_action() end, { desc = "View: Code action" })
 --
 
 -- Easier interaction with the system clipboard

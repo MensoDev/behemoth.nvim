@@ -1,4 +1,4 @@
--- Behemoth | Settings
+-- Behemoth | Options
 --
 
 -- General
