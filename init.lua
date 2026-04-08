@@ -20,6 +20,15 @@ require("settings.keymaps")
 require("settings.autocmds")
 --
 
+-- Plugins | UI
+-- 1
+require("plugins.ui.icons")
+--
+
+-- Plugins | Explorer
+--
+require("plugins.explorer.oil")
+--
 
 -- Plugins | Themes
 -- 1
@@ -30,7 +39,6 @@ require("plugins.themes.tokyonight")
 require("plugins.themes")
 --
 
-
 -- Plugins | Code
 -- 1
 require("plugins.code.treesitter")
@@ -40,11 +48,6 @@ require("plugins.code.lsp")
 require("plugins.code.autocomplete")
 -- 4
 require("plugins.code.gitsigns")
---
-
--- Plugins | Explorer
---
-require("plugins.explorer.oil")
 --
 
 -- Plugins | Tools

@@ -7,9 +7,13 @@ vim.keymap.set('n', "<leader>e", "<cmd>Ex<CR>", { desc = "Open file explorer (te
 vim.keymap.set("n", "<Esc>", "<cmd>noh<CR>", { desc = "General clear highlights" })
 --
 
+local names = 'teste'
+
+print(names)
+
 -- LSP
---
-vim.keymap.set('n', "<leader>vc", function() vim.lsp.buf.code_action() end, { desc = "View: Code action" })
+vim.keymap.set('n', 'grd', vim.lsp.buf.definition, { desc = "LSP Code: GoTo Definition", })
+vim.keymap.set('n', 'grD', vim.lsp.buf.declaration, { desc = "LSP Code: GoTo Declaration", })
 --
 
 -- Easier interaction with the system clipboard
