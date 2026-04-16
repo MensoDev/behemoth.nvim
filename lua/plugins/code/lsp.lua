@@ -25,6 +25,7 @@ require("mason-lspconfig").setup({
         "lua_ls",
         "rust_analyzer",
         "cssls",
+        "qmlls",
         "html",
         "tailwindcss",
         "emmet_ls",
