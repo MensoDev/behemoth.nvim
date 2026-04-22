@@ -25,16 +25,18 @@ require("mason-lspconfig").setup({
         "lua_ls",
         "rust_analyzer",
         "cssls",
-        "qmlls",
         "html",
         "tailwindcss",
         "emmet_ls",
         "emmet_language_server",
+        -- "qmlls",
         -- "roslyn" ISSUE: mason and mason-lspconfig don't suport directly roslyn install
     },
 })
 
 -- vim.lsp.enable('roslyn_ls')
+vim.lsp.enable('roslyn')
+vim.lsp.enable('tailwindcss')
 
 vim.lsp.config("roslyn", {
     on_attach = function()
@@ -61,12 +63,12 @@ vim.diagnostic.config({
             [vim.diagnostic.severity.HINT] = ' ',
             [vim.diagnostic.severity.INFO] = ' ',
         },
-        -- linehl = {
-        --     [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-        -- },
-        -- numhl = {
-        --     [vim.diagnostic.severity.WARN] = 'WarningMsg',
-        -- },
+        linehl = {
+            [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        },
+        numhl = {
+            [vim.diagnostic.severity.WARN] = 'WarningMsg',
+        },
     },
     -- Use the default configuration
     -- virtual_lines = true

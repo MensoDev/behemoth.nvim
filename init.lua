@@ -48,6 +48,8 @@ require("plugins.code.lsp")
 require("plugins.code.autocomplete")
 -- 4
 require("plugins.code.gitsigns")
+-- 5
+require("plugins.code.colorizer")
 --
 
 -- Plugins | Tools
