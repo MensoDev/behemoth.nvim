@@ -45,7 +45,14 @@ require("catppuccin").setup({
             NormalFloat = { bg = "none" },
             LineNr = { fg = colors.overlay0 },
             CursorLineNr = { fg = colors.mauve, bg = colors.none },
-            CursorLine = { bg = colors.none }
+            CursorLine = { bg = colors.none },
+
+            -- MiniJump2dSpot = { bg = colors.peach, fg = colors.base },
+            MiniJump2dSpotUnique = { bg = colors.green, fg = colors.base },
+            -- MiniJump2dSpotAhead = { },
+            -- MiniJump2dDim = { },
+
+            MiniJump = { bg = colors.mauve, fg = colors.base },
         }
     end,
     integrations = {
@@ -61,9 +68,15 @@ require("catppuccin").setup({
         which_key = true,
         gitsigns = true,
         markdown = true,
-        mini = true,
+        mini = {
+            enabled = true,
+            indentscope_color = "mauve",
+        },
         dap = true,
         dap_ui = true,
+        blink_cmp = {
+            style = 'bordered',
+        }
         -- terminal = false,
     },
 })

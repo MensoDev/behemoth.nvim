@@ -29,28 +29,17 @@ require("mason-lspconfig").setup({
         "tailwindcss",
         "emmet_ls",
         "emmet_language_server",
-        -- "qmlls",
         -- "roslyn" ISSUE: mason and mason-lspconfig don't suport directly roslyn install
     },
 })
 
--- vim.lsp.enable('roslyn_ls')
 vim.lsp.enable('roslyn')
 vim.lsp.enable('tailwindcss')
 
-vim.lsp.config("roslyn", {
-    on_attach = function()
-        vim.notify("Roslyn Attached")
-    end,
-    settings = {
-        ["csharp|inlay_hints"] = {
-            csharp_enable_inlay_hints_for_implicit_object_creation = true,
-            csharp_enable_inlay_hints_for_implicit_variable_types = true,
-        },
-        ["csharp|code_lens"] = {
-            dotnet_enable_references_code_lens = true,
-        },
-    },
+require("roslyn").setup({
+  extensions = {
+    razor = { enabled = false },
+  },
 })
 
 vim.diagnostic.config({

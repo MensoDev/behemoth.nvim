@@ -22,8 +22,8 @@ vim.keymap.set({ 'n', 'x' }, '<leader>P', '"+P', { desc = 'Paste from system cli
 
 -- Move selected lines
 --
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = "Moves lines down in visual selection" })
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = "Moves lines up in visual selection" })
+-- vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = "Moves lines down in visual selection" })
+-- vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = "Moves lines up in visual selection" })
 --
 
 -- Easier interaction with windows

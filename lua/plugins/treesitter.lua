@@ -36,6 +36,8 @@ local ensure_installed = {
     "vimdoc",
     "xml",
     "yaml",
+    -- "qmljs",
+    -- "qmldir",
 }
 
 treesitter.install(ensure_installed)

@@ -8,7 +8,6 @@ vim.pack.add({
 })
 
 require("lualine").setup()
-require("bufferline").setup()
 require("todo-comments").setup()
 
 require("colorizer").setup({
@@ -24,3 +23,12 @@ require("colorizer").setup({
     },
 })
 
+
+require('bufferline').setup({
+    highlights = require("catppuccin.special.bufferline").get_theme()
+})
+
+-- vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "BufferLineBackground", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "BufferLineSeparator", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "BufferLineIndicatorSelected", { bg = "none" })
