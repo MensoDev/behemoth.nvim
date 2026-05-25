@@ -55,11 +55,11 @@ vim.api.nvim_create_autocmd("FileType", {
         pcall(vim.treesitter.language.add, lang)
         pcall(vim.treesitter.start, buf, lang)
 
-        -- enable indentation (skip yaml/markdown)
-        if ft ~= "yaml" and ft ~= "markdown" then
-            vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-            vim.bo[buf].smartindent = false
-            vim.bo[buf].cindent = false
-        end
+        -- -- enable indentation (skip yaml/markdown)
+        -- if ft ~= "yaml" and ft ~= "markdown" then
+        --     vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        --     vim.bo[buf].smartindent = false
+        --     vim.bo[buf].cindent = false
+        -- end
     end,
 })

@@ -1,14 +1,20 @@
 vim.pack.add({
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
-    { src = "https://github.com/folke/tokyonight.nvim", name = "tokyonight"  },
 })
+
 
 require("catppuccin").setup {
     transparent_background = true,
     custom_highlights = function(colors)
         return {
             ColorColumn = { bg = colors.mauve },
+
+            -- Pmenu styling (similar to your rose-pine)
+            Pmenu = { bg = colors.base, fg = colors.text },
+            PmenuSel = { bg = colors.surface2, fg = "NONE" },
+            PmenuSbar = { bg = colors.surface0 },
+            PmenuThumb = { bg = colors.overlay2 },
 
             -- For fully transparent
             -- Normal = { bg = "none" },
