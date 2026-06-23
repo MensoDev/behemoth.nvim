@@ -2,7 +2,7 @@ vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/mason-org/mason.nvim" },
     { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
-    { src = "https://github.com/seblyng/roslyn.nvim" },
+    -- { src = "https://github.com/seblyng/roslyn.nvim" },
 })
 
 require("mason").setup({
@@ -33,21 +33,21 @@ require("mason-lspconfig").setup({
     },
 })
 
-vim.lsp.enable("lua_ls")
+-- vim.lsp.enable("lua_ls")
 
-vim.lsp.enable("roslyn")
-require("roslyn").setup({})
+-- vim.lsp.enable("roslyn")
+-- require("roslyn").setup({})
 
--- vim.lsp.enable("roslyn_ls")
--- vim.lsp.config("roslyn_ls", {
---     filetypes = { "razor", "cs" },
---     settings = {
---         ['csharp|background_analysis'] = {
---             dotnet_analyzer_diagnostics_scope = 'openFiles',
---             dotnet_compiler_diagnostics_scope = 'openFiles',
---         },
---     },
--- })
+vim.lsp.enable("roslyn_ls")
+vim.lsp.config("roslyn_ls", {
+    filetypes = { "razor", "cs" },
+    settings = {
+        ['csharp|background_analysis'] = {
+            dotnet_analyzer_diagnostics_scope = 'openFiles',
+            dotnet_compiler_diagnostics_scope = 'openFiles',
+        },
+    },
+})
 
 vim.diagnostic.config({
     -- Highlight the line number for warnings

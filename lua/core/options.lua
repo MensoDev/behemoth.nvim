@@ -94,8 +94,8 @@ vim.o.pummaxwidth = 40
 
 -- Completitions
 --
-vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
+-- vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
 -- vim.o.autocomplete = true
-vim.opt.shortmess:append("c")
-vim.opt.isfname:append("@-@")
+-- vim.opt.shortmess:append("c")
+-- vim.opt.isfname:append("@-@")
 --

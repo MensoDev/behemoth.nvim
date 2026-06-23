@@ -57,10 +57,10 @@ vim.keymap.set({ "n",     }, "<leader>sx", "<cmd>close<CR>", { desc = "Close cur
 
 -- Easier interaction with buffers
 --
-vim.keymap.set({ "n",     }, '<leader>bb', '<C-^>', { desc = 'Switch to alternate buffer' })
-vim.keymap.set({ "n",     }, '<leader>bn', ':bnext<cr>', { desc = 'Next buffer' })
-vim.keymap.set({ "n",     }, '<leader>bp', ':bprevious<cr>', { desc = 'Previous buffer' })
-vim.keymap.set({ "n",     }, "<leader>x", "<cmd>bdelete<CR>", { desc = "Delete current buffer" })
+vim.keymap.set({ "n",     }, '<leader>tt', '<C-^>', { desc = 'Switch to alternate buffer' })
+vim.keymap.set({ "n",     }, '<leader>tn', ':bnext<cr>', { desc = 'Next buffer' })
+vim.keymap.set({ "n",     }, '<leader>tp', ':bprevious<cr>', { desc = 'Previous buffer' })
+vim.keymap.set({ "n",     }, "<leader>q", "<cmd>bdelete<CR>", { desc = "Delete current buffer" })
 --
 
 -- Quickly source current file / execute Lua code
