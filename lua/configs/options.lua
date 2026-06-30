@@ -33,7 +33,8 @@ vim.opt.smartcase = true
 
 -- Preview substitutions
 --
-vim.opt.inccommand = "split"
+vim.opt.inccommand = "nosplit"
+-- vim.opt.inccommand = "split"
 --
 
 -- Text wrapping
@@ -53,7 +54,7 @@ vim.opt.shiftwidth = 4
 -- Indent
 --
 vim.opt.autoindent = true
-vim.opt.smartindent = true
+-- vim.opt.smartindent = true -- remove?
 --
 
 -- Window splitting
@@ -88,14 +89,15 @@ vim.opt.backup = false
 
 -- Popup
 --
-vim.o.pumborder = "rounded"
-vim.o.pummaxwidth = 40
+-- vim.o.pumborder = "rounded"
+-- vim.o.pummaxwidth = 40
 --
 
 -- Completitions
---
+-- Using blink.lib and blink.cmp now
+-- vim.opt.completeopt = "noinsert,noselect"
+-- vim.o.autocomplete = false
 -- vim.opt.completeopt = "menuone,noselect,fuzzy,nosort"
--- vim.o.autocomplete = true
 -- vim.opt.shortmess:append("c")
 -- vim.opt.isfname:append("@-@")
 --

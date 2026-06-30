@@ -2,7 +2,6 @@ vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/mason-org/mason.nvim" },
     { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
-    -- { src = "https://github.com/seblyng/roslyn.nvim" },
 })
 
 require("mason").setup({
@@ -29,14 +28,8 @@ require("mason-lspconfig").setup({
         "tailwindcss",
         "emmet_ls",
         "emmet_language_server",
-        -- "roslyn" ISSUE: mason and mason-lspconfig don't suport directly roslyn install
     },
 })
-
--- vim.lsp.enable("lua_ls")
-
--- vim.lsp.enable("roslyn")
--- require("roslyn").setup({})
 
 vim.lsp.enable("roslyn_ls")
 vim.lsp.config("roslyn_ls", {

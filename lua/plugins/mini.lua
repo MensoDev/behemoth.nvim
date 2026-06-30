@@ -4,15 +4,15 @@ vim.pack.add({
 
 -- require("mini.icons").setup()
 require("mini.pairs").setup()
-require('mini.indentscope').setup()
+-- require('mini.indentscope').setup()
 require('mini.trailspace').setup()
-require('mini.notify').setup()
-require('mini.fuzzy').setup()
-require('mini.pick').setup()
-require('mini.extra').setup()
+-- require('mini.notify').setup()
+-- require('mini.fuzzy').setup()
+-- require('mini.pick').setup()
+-- require('mini.extra').setup()
 require('mini.jump').setup()
 require('mini.jump2d').setup()
--- require('mini.starter').setup()
+require('mini.starter').setup()
 
 require('mini.move').setup({
   mappings = {
@@ -29,15 +29,15 @@ require('mini.move').setup({
 })
 
 -- Pick Keymaps
-vim.ui.select = require('mini.pick').ui_select
+-- vim.ui.select = require('mini.pick').ui_select
 
-vim.keymap.set('n', "<leader>ff", "<cmd>Pick files<CR>", { desc = "Mini Find: files" })
-vim.keymap.set('n', "<leader>fg", "<cmd>Pick grep_live<CR>", { desc = "Mini Find: files grep" })
-vim.keymap.set('n', "<leader>fb", "<cmd>Pick buffers<CR>", { desc = "Mini Find: buffers" })
+-- vim.keymap.set('n', "<leader>ff", "<cmd>Pick files<CR>", { desc = "Mini Find: files" })
+-- vim.keymap.set('n', "<leader>fg", "<cmd>Pick grep_live<CR>", { desc = "Mini Find: files grep" })
+-- vim.keymap.set('n', "<leader>fb", "<cmd>Pick buffers<CR>", { desc = "Mini Find: buffers" })
 
-vim.keymap.set("n", "<leader>fc", function()
-  require("mini.pick").builtin.files(nil, { source = { cwd = vim.fn.stdpath("config") } })
-end, { desc = "Mini Find: config files" })
+-- vim.keymap.set("n", "<leader>fc", function()
+--   require("mini.pick").builtin.files(nil, { source = { cwd = vim.fn.stdpath("config") } })
+-- end, { desc = "Mini Find: config files" })
 
 -- 4. Melhorado: Limpa espaços em branco E linhas vazias no final do arquivo
 vim.keymap.set('n', "<leader>cl", function()
@@ -46,18 +46,18 @@ vim.keymap.set('n', "<leader>cl", function()
 end, { desc = "Mini Trim: whitespace & empty lines" })
 
 -- Keymaps de navegação do LSP usando o mini.pick
-vim.keymap.set('n', '<leader>fs', "<cmd>Pick lsp scope='document_symbol'<CR>", { desc = "Mini Find: Document symbols" })
-vim.keymap.set('n', '<leader>fS', "<cmd>Pick lsp scope='workspace_symbol'<CR>", { desc = "Mini Find: Workspace symbols" })
-vim.keymap.set('n', 'grd', "<cmd>Pick lsp scope='definition'<CR>", { desc = "Mini LSP: Go to definition" })
-vim.keymap.set('n', 'grD', "<cmd>Pick lsp scope='declaration'<CR>", { desc = "Mini LSP: Go to definition" })
-vim.keymap.set('n', 'grr', "<cmd>Pick lsp scope='references'<CR>", { desc = "Mini LSP: Find references" })
+-- vim.keymap.set('n', '<leader>fs', "<cmd>Pick lsp scope='document_symbol'<CR>", { desc = "Mini Find: Document symbols" })
+-- vim.keymap.set('n', '<leader>fS', "<cmd>Pick lsp scope='workspace_symbol'<CR>", { desc = "Mini Find: Workspace symbols" })
+-- vim.keymap.set('n', 'grd', "<cmd>Pick lsp scope='definition'<CR>", { desc = "Mini LSP: Go to definition" })
+-- vim.keymap.set('n', 'grD', "<cmd>Pick lsp scope='declaration'<CR>", { desc = "Mini LSP: Go to definition" })
+-- vim.keymap.set('n', 'grr', "<cmd>Pick lsp scope='references'<CR>", { desc = "Mini LSP: Find references" })
 
 -- Jump keymap
 
 local function jump(opt)
     return "<Cmd>lua MiniJump2d.start(MiniJump2d.builtin_opts." .. opt .. ")<CR>"
 end
-
+--
 vim.keymap.set('n', '<leader>ga', jump("default"), { desc = "Mini: Jump to queryable word" })
 vim.keymap.set('n', '<leader>gw', jump("query"), { desc = "Mini: Jump to queryable word" })
 vim.keymap.set('n', '<leader>gc', jump("single_character"), { desc = "Mini: Jump to queryable character" })

@@ -1,0 +1,81 @@
+-- Behemoth | Core.Keymaps
+--
+
+local map = vim.keymap.set
+
+-- ({ modes    }, "keymap",     command,                    { options })
+
+-- General
+--
+map({ "n",     }, "-",          vim.cmd.Ex,                 { desc = "Open file explorer (netrw)" })
+map({ "n",     }, "<Esc>",      vim.cmd.noh,                { desc = "General clear highlights" })
+--
+
+-- Easier interaction with the system clipboard
+--
+-- vim.keymap.set({ "n", "x" }, "<leader>y", '"+y', { desc = 'Copy to system clipboard' })
+-- vim.keymap.set({ "n", "x" }, "<leader>p", '"+p', { desc = 'Paste from system clipboard after the cursor position' })
+-- vim.keymap.set({ "n", "x" }, "<leader>P", '"+P', { desc = 'Paste from system clipboard before the cursor position' })
+--
+map({ "x",     }, "p",          [["_dP]],                   { desc = "Paste over selection without losing yanked text" })
+map({ "n", "v" }, "<leader>d",  [["_d]],                    { desc = "Delete without yanking" })
+--
+
+-- Easier interaction with buffers (T is more easy in COLEMAK-HD Keyboard Layout)
+--
+map({ "n",     }, '<leader>tt', '<C-^>',                    { desc = 'Switch to alternate buffer' })
+map({ "n",     }, '<leader>tn', ':bnext<cr>',               { desc = 'Next buffer' })
+map({ "n",     }, '<leader>tp', ':bprevious<cr>',           { desc = 'Previous buffer' })
+map({ "n",     }, "<leader>q",  "<cmd>bdelete<CR>",         { desc = "Delete current buffer" })
+map({ "n",     }, "<C-d>",      "<C-d>zz",                  { desc = "move down in buffer with cursor centered" })
+map({ "n",     }, "<C-u>",      "<C-u>zz",                  { desc = "move up in buffer with cursor centered" })
+map({ "n",     }, "n",          "nzzzv")
+map({ "n",     }, "N",          "Nzzzv")
+map({ "v",     }, "<",          "<gv",                      { noremap = true, silent = true})
+map({ "v",     }, ">",          ">gv",                      { noremap = true, silent = true})
+--
+
+-- Replace
+--
+-- vim.keymap.set({ "n",     }, "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word cursor is on globally" })
+--
+
+-- Easier interaction with windows
+--
+--
+-- vim.keymap.set({ "n",     }, "<C-h>", "<C-w>h", { desc = "Switch window left" })
+-- vim.keymap.set({ "n",     }, "<C-l>", "<C-w>l", { desc = "Switch window right" })
+-- vim.keymap.set({ "n",     }, "<C-j>", "<C-w>j", { desc = "Switch window down" })
+-- vim.keymap.set({ "n",     }, "<C-k>", "<C-w>k", { desc = "Switch window up" })
+--
+-- vim.keymap.set({ "t",     }, "<C-h>", [[<C-\><C-n><C-w>h]])
+-- vim.keymap.set({ "t",     }, "<C-j>", [[<C-\><C-n><C-w>j]])
+-- vim.keymap.set({ "t",     }, "<C-k>", [[<C-\><C-n><C-w>k]])
+-- vim.keymap.set({ "t",     }, "<C-l>", [[<C-\><C-n><C-w>l]])
+--
+
+-- Easier interaction with split windows
+--
+-- vim.keymap.set({ "n",     }, "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
+-- vim.keymap.set({ "n",     }, "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
+-- vim.keymap.set({ "n",     }, "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
+-- vim.keymap.set({ "n",     }, "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+--
+
+
+-- Quickly source current file / execute Lua code
+--
+-- vim.keymap.set('n', '<leader>xx', '<Cmd>source %<CR>', { desc = 'Source current file' })
+-- vim.keymap.set('n', '<leader>x', '<Cmd>:.lua<CR>', { desc = 'Lua: execute current line' })
+-- vim.keymap.set('v', '<leader>x', '<Cmd>:lua<CR>', { desc = 'Lua: execute current selection' })
+--
+
+-- LSP
+-- vim.keymap.set({ "n",     }, "grd", vim.lsp.buf.definition, { desc = "LSP Code: GoTo Definition", })
+-- vim.keymap.set({ "n",     }, "grD", vim.lsp.buf.declaration, { desc = "LSP Code: GoTo Declaration", })
+--
+
+-- Commands
+--
+-- vim.cmd("let g:netrw_banner = 0")
+--
